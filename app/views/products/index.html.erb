@@ -1,0 +1,13 @@
+<h1> index </h1>
+<%# why can't i use @cart here? %>
+<% cart.each do |item| %>
+    <div><%= item %></div>
+<% end %>
+
+<!-- only the dead shall know peace from form_tag -->
+<h2> add new item to cart </h2>
+
+<%=form_tag ({controller: "products", action: "add", method: "post"}) do %>
+    <%= text_field_tag :product %>
+    <%= submit_tag 'add to cart' %>
+<% end %>
